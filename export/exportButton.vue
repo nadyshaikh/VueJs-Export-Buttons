@@ -57,11 +57,6 @@ import {
 } from "bootstrap-vue";
 import Ripple from "vue-ripple-directive";
 
-//import "tableexport.jquery.plugin/libs/jsPDF/polyfills.umd.min.js"
-//import "tableexport.jquery.plugin/libs/jsPDF/jspdf.umd.min.js"
-//import "tableexport.jquery.plugin/libs/pdfmake/pdfmake.min.js"
-//import "tableexport.jquery.plugin/libs/html2canvas/html2canvas.min.js"
-
  import jsPDF from 'jspdf';
  import 'jspdf-autotable';
 import "tableexport.jquery.plugin/tableExport.min.js"
