@@ -112,15 +112,7 @@ export default {
     },
    
     setup(props){
-        //const { jsPDF } = jspdf
-        //  const { jsPDF } = jsPDF
-        // let print = () => {
-        //     const doc = new jsPDF()
-        //     doc.addHTML(jQuery('table'), 15, 15, function() {
-        //         doc.print();
-        //     });
-        // }
-
+       
         var specialElementHandlers = {
             // element with id of "bypass" - jQuery style selector
             '.no-export': function(element, renderer) {
@@ -160,35 +152,14 @@ export default {
                         html: props.htmlElement,  
                         startY: 70,  
                         theme: props.theme, 
-                        
-                        // columnStyles: {  
-                        //     0: {  
-                        //         cellWidth: 180,  
-                        //     },  
-                        //     1: {  
-                        //         cellWidth: 180,  
-                        //     },  
-                        //     2: {  
-                        //         cellWidth: 180,  
-                        //     }  
-                        // },  
-                        // styles: {  
-                        //     minCellHeight: 10  
-                        // }  
+                       
                     })  
                     doc.save(props.fileName+'.pdf'); 
                     //This is a key for printing
                     //doc.output('dataurlnewwindow');
                 
              }else if(fileType=='print'){
-
-                    // var tTB = document.getElementById("myTable");
-                    // var atTB = doc.autoTableHtmlToJson(tTB, true);
-                    // var cols = atTB.columns;
-                    // //here you are going to set which column you will truncate. Moreover, .splice(index number of the column(your start), the number of columns you will exclude)
-                    // cols.splice(4,1); 
-                    // doc.text("My Test Table", 40, 60);
-                    // doc.autoPrint();
+                  
                     var doc = new jsPDF(props.layout, 'pt', "a4");
                     var tTB = document.getElementById(props.htmlElement);                   
                     var atTB = doc.autoTableHtmlToJson(tTB, true);                     
@@ -205,40 +176,6 @@ export default {
 
                     doc.autoPrint();
 
-
-
-                 //doc.autoPrint();
-                    // var doc = new jsPDF(props.layout, 'pt', "a4");
-                    // //var name = "Doe, John"
-                    // // doc.setFontType("normal");
-                    //  doc.setFontSize(12);
-                    // //doc.text(20,20,'Name: '+ name);
-                    // //doc.autoPrint();
-                    // doc.autoTable({  
-                    //     html: props.htmlElement,  
-                    //     startY: 30,
-                    //     startX: 30, 
-                    //     theme: props.theme,
-                    //     showHead: 'firstPage',
-                    //     ignoreColumn:['Contact Id', 'Name', 'Mobile','Contact Type (Click to sort Ascending)']
-                    //     //head: ['Contact ID', 'Name', 'Mobile']   
-                    //     // columnStyles: {  
-                    //     //     0: {  
-                    //     //         cellWidth: 180,  
-                    //     //     },  
-                    //     //     1: {  
-                    //     //         cellWidth: 180,  
-                    //     //     },  
-                    //     //     2: {  
-                    //     //         cellWidth: 180,  
-                    //     //     }  
-                    //     // },  
-                    //     // styles: {  
-                    //     //     minCellHeight: 10  
-                    //     // }  
-                    // })  
-                    // doc.autoPrint();
-                   // doc.save('Marks_Of_Students.pdf'); 
                     //This is a key for printing
                     doc.output('dataurlnewwindow');
              }else{
@@ -250,9 +187,7 @@ export default {
 
        return {
           ExportCSV
-          //jsPDF
-        //   print,
-        //   savePDF
+         
        }
     }
 }
